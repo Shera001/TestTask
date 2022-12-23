@@ -8,7 +8,7 @@ The Test app follows the [official architecture guidance](https://developer.andr
 
 
 # Modularization
-The Now in Android app has been fully modularized <br/><br/>
+The app has been fully modularized <br/><br/>
 
 
 Let me elaborate tech stack I used in the Test project:
