@@ -139,7 +139,6 @@ class PostsFragment : Fragment(R.layout.fragment_posts) {
                 scope.launch {
                     item?.let { post -> viewModel.clearDeletedPost(post) }
                 }
-//                postsAdapter.notifyItemInserted(position)
                 if (position == 0) {
                     viewBinding.postRv.smoothScrollToPosition(0)
                 }
