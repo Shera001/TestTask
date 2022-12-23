@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="posts">Posts</string>
+    <string name="body">Body</string>
+    <string name="title">Title</string>
+    <string name="add">Add</string>
+    <string name="fabAdd">fabAdd</string>
+    <string name="add_new_post">Add new post</string>
+    <string name="edit">Edit</string>
+    <string name="empty_filed">Field can not be empty</string>
+    <string name="error_message">Something wen wrong</string>
+    <string name="deleted_message">Item was deleted</string>
+    <string name="done">Done</string>
+</resources>
