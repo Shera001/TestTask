@@ -73,8 +73,12 @@ class PostsRepositoryImpl @Inject constructor(
     }
 
     override suspend fun clearDeletedPostById(post: Post) {
-        postDao.clearDeletedPostById(post.id)
-        postDao.insert(post.toPostEntity())
+        try {
+            postDao.clearDeletedPostById(post.id)
+            postDao.insert(post.toPostEntity())
+        } catch (e: Exception) {
+            Log.e(TAG, "clearDeletedPostById:", e.cause)
+        }
     }
 
     private companion object {

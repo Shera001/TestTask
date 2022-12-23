@@ -7,9 +7,7 @@ import com.test.core.model.PostModel
 
 @Entity(tableName = "posts")
 data class PostEntity(
-    @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "defaultId")
-    val defaultId: Int? = null,
+    @PrimaryKey
     override val id: Int,
     override val userId: Int,
     override val title: String,
