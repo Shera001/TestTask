@@ -4,28 +4,54 @@ androidGradlePlugin = "7.3.1"
 androidxCore = "1.9.0"
 androidxAppCompat = "1.5.1"
 androidxConstraintLayout = "2.1.4"
+androidxFragmentKtx = "1.5.5"
 androidxEspresso = "3.5.0"
+androidxNavigation = "2.5.3"
+androidxPaging = "3.1.1"
+androidxRoom = "2.4.3"
 androidxTestExt = "1.1.4"
+hilt = "2.44"
 junit4 = "4.13.2"
-material = "1.7.0"
 kotlin = "1.7.20"
+kotlinxCoroutines = "1.6.4"
+ksp = "1.7.20-1.0.8"
+material = "1.7.0"
+retrofit = "2.9.0"
+okhttpLogging = "4.10.0"
+shimmer = "0.5.0"
+
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidxCore" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidxAppCompat" }
 androidx-constraint-layout = {group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "androidxConstraintLayout"}
-android-desugarJdkLibs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "androidDesugarJdkLibs" }
+androidx-fragment-ktx = {group = "androidx.fragment", name = "fragment-ktx", version.ref = "androidxFragmentKtx"}
+androidx-navigation-fragment = {group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "androidxNavigation"}
+androidx-navigation-ui = {group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "androidxNavigation"}
+androidx-paging = { group = "androidx.paging", name="paging-runtime", version.ref = "androidxPaging" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "androidxRoom" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "androidxRoom" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "androidxRoom" }
+androidx-room-paging = { group = "androidx.room", name = "room-paging", version.ref = "androidxRoom" }
 androidx-test-ext = { group = "androidx.test.ext", name = "junit", version.ref = "androidxTestExt"}
 androidx-test-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidxEspresso" }
-material = { group = "com.google.android.material", name = "material", version.ref = "material"}
+android-desugarJdkLibs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "androidDesugarJdkLibs" }
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
 junit4 = { group = "junit", name = "junit", version.ref = "junit4" }
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinxCoroutines" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material"}
+retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-gson-converter = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
+okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttpLogging"}
+shimmer = { group = "com.facebook.shimmer", name = "shimmer", version.ref = "shimmer"}
 
-# Dependencies of the included build-logic
-android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
-kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp"}
