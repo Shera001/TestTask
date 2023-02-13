@@ -24,9 +24,10 @@ class PostsPagingSource @Inject constructor(
             val posts = checkNotNull(
                 apiService.getPosts(page, pageSize)
             )
-            val nextKey = if (posts.size < pageSize) null else (page + 1)
-            val prevKey = if (page == 1) null else (page - 1)
-            return LoadResult.Page(posts, prevKey, nextKey)
+//            val nextKey = if (posts.size < pageSize) null else (page + 1)
+//            val prevKey = if (page == 1) null else (page - 1)
+//            return LoadResult.Page(posts, prevKey, nextKey)
+            return LoadResult.Page(emptyList(), 0, 0)
         } catch (e: Exception) {
             Log.e("TAG", "load: ", e.cause)
             return LoadResult.Error(e.cause ?: error("exception"))

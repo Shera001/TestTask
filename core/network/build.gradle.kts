@@ -38,6 +38,7 @@ android {
 dependencies {
 
     implementation(project(":core:model"))
+    implementation(project(":core:common"))
 
     implementation(libs.androidx.paging)
     implementation(libs.retrofit.core)

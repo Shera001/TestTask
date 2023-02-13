@@ -4,8 +4,7 @@ import androidx.paging.ExperimentalPagingApi
 import androidx.paging.LoadType
 import androidx.paging.PagingState
 import androidx.paging.RemoteMediator
-import com.test.core.common.util.DefaultDispatcher
-import com.test.core.common.util.IODispatcher
+import com.test.core.common.util.*
 import com.test.core.database.dao.PostDao
 import com.test.core.database.entity.PostEntity
 import com.test.core.network.PostsApiService
@@ -74,9 +73,20 @@ class PostsRemoteMediator @Inject constructor(
             val newPosts = async {
                 apiService.getPosts(page, pageSize)
             }
-            newPosts.await()
-                .filter { predicate -> predicate.id !in deletedPosts.await().map { it.id } }
-                .map { post -> PostEntity(post) }
+            when (val result = newPosts.await()) {
+                is ApiSuccess -> {
+                    result.data.filter { predicate ->
+                        predicate.id !in deletedPosts.await().map { it.id }
+                    }
+                        .map { post -> PostEntity(post) }
+                }
+                is ApiError -> {
+                    emptyList()
+                }
+                is ApiException -> {
+                    emptyList()
+                }
+            }
         } catch (e: Exception) {
             emptyList()
         }

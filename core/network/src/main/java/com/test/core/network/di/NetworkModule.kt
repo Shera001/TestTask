@@ -1,5 +1,6 @@
 package com.test.core.network.di
 
+import com.test.core.network.utils.NetworkResultCallAdapterFactory
 import com.test.core.network.PostsApiService
 import dagger.Module
 import dagger.Provides
@@ -30,6 +31,7 @@ object NetworkModule {
                     .build()
             )
             .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(NetworkResultCallAdapterFactory.create())
             .build()
     }
 
